@@ -1,0 +1,13 @@
+create table genres (genre_id serial primary key,genre_name text);
+
+create table specialevents (splevnt_id serial primary key, name text, genre_id int references genres(genre_id),StartTime timestamp,EndTime timestamp);
+
+create table events (evnt_id serial primary key, name text, genre_id int references genres(genre_id),StartTime timestamp,EndTime timestamp);
+
+create table event_attend (event_id int references events(evnt_id), entry_no text);
+
+create table specialevent_attend (splevnt_id int references specialevents(splevnt_id),entry_no text);
+
+create table follow (fan text, other text);
+
+create table genre_fans (fan text, genre_id int references genres(genre_id));
