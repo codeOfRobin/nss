@@ -18,7 +18,7 @@
 		try
 		{
 
-			$results=$db->query("SELECT * FROM events Order by StartTime Desc");
+			$results=$db->query("SELECT * FROM iOS_events Order by StartTime Desc");
 			$display=$results->fetchAll(PDO::FETCH_ASSOC);
 			
 			foreach ($display as $row)

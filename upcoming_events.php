@@ -19,7 +19,7 @@
 		try
 		{
 
-			$results=$db->query("SELECT * FROM events Where StartTime>CURDATE()");
+			$results=$db->query("SELECT * FROM iOS_events Where StartTime>CURDATE()");
 			$display=$results->fetchAll(PDO::FETCH_ASSOC);
 			if(count($display)==0)
 			{
